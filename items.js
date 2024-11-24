@@ -1,0 +1,1 @@
+export const itemsArray = [{test: 'name', test2: 'jopa'}]
