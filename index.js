@@ -11,13 +11,21 @@ test.addEventListener('keyup', () => {
 });
 
 const filterItems = () => {
+    let hasVisibleItems = false
     const query = test.value.toLowerCase();
     items.forEach((item) => {
-        const text = item.textContent.toLowerCase();
-        item.style.display = query.length === 0 || text.includes(query) ? 'block' : 'none'
-        if (query.length > 0 && !text.includes(query)) {
-            noResult.classList.add('text_visible')
+        let text = item.textContent.toLowerCase();
+        if (query.length === 0 || text.includes(query)) {
+            item.style.display = 'block'
+            hasVisibleItems = true;
+        } else {
+            item.style.display = 'none'
         }
     })
+    if (query.length > 0 && !hasVisibleItems) {
+        noResult.style.display = 'block'
+    } else (
+        noResult.style.display = 'none'
+    )
 }
 
