@@ -4,3 +4,26 @@
 .text_visible {
     display: block;
 }
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px
+}
+
+input {
+    background-color: black;
+    color: white;
+    border: 1px yellow solid;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+p {
+    background-color: #393939;
+    padding: 15px;
+    margin: 0 0 10px 0;
+}

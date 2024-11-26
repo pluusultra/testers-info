@@ -1,1 +1,1 @@
-export const itemsArray = [{test: 'name', test2: 'jopa'}]
+export const itemsArray = [{id: "1", model: "2355", name: 'ларец Рандомный ларец'}]

@@ -29,3 +29,5 @@ const filterItems = () => {
     )
 }
 
+
+console.log(itemsArray[0].id)
