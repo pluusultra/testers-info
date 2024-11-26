@@ -1,12 +1,6 @@
-.nothing {
-    display: none;
-}
-.text_visible {
-    display: block;
-}
 body {
     margin: 0;
-    background-color: black;
+    background-color: #222222;
     color: white;
     display: flex;
     flex-direction: column;
@@ -17,13 +11,65 @@ body {
 input {
     background-color: black;
     color: white;
-    border: 1px yellow solid;
+    border: none;
+    border-bottom: 5px solid black;
     margin-bottom: 15px;
     padding: 10px;
+    position: sticky;
+    top: 0;
+    font-size: 26px;
+    width: 100%;
 }
 
-p {
-    background-color: #393939;
-    padding: 15px;
-    margin: 0 0 10px 0;
+input:focus {
+    outline: 2px solid #02ff00;
+}
+
+table {
+    text-align: center;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 18px;
+}
+
+.thead tr, .thead th {
+    border-top: none;
+}
+
+tr, td, th {
+    border: 2px solid black;
+}
+
+
+th, td {
+    padding: 20px;
+}
+
+@media (hover: hover) {
+    tbody tr:hover {
+        background-color: black;
+    }
+}
+
+@media (hover: none) {
+    tbody tr:active {
+        background-color: black;
+    }
+}
+
+.thead {
+    position: sticky;
+    top: 61px;
+    background-color: #74392c;
+    z-index: 2;
+}
+
+.table-item_hide {
+    display: none;
+}
+
+.nothing_hide {
+    display: none;
 }

@@ -1,33 +1,47 @@
-const test = document.querySelector('.test')
-const items = document.querySelectorAll('.text')
+import {itemsArray} from './items.js'
+const inputSearch = document.querySelector('.test')
 const noResult = document.querySelector('.nothing')
+const template = document.querySelector('#template')
+const itemsList = document.querySelector('tbody')
+
+// Добавляем на сайт массив с информацией о каждом предмете
+itemsArray.forEach((el) => {
+    const itemElement = template.content.cloneNode(true)
+    let itemId = itemElement.querySelector('.item-id')
+    let modelId = itemElement.querySelector('.model-id')
+    let itemName = itemElement.querySelector('.item-name')
+
+    itemId.textContent = el.id
+    modelId.textContent = el.model
+    itemName.textContent = el.name
+
+    itemsList.append(itemElement)
+})
+
+const items = document.querySelectorAll('.table-item')
 let debounceTimer;
 
-import {itemsArray} from './items.js'
-
-test.addEventListener('keyup', () => {
+inputSearch.addEventListener('keyup', () => {
     clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(filterItems, 200)
+    debounceTimer = setTimeout(filterItems, 300)
 });
 
 const filterItems = () => {
     let hasVisibleItems = false
-    const query = test.value.toLowerCase();
+    const query = inputSearch.value.toLowerCase();
     items.forEach((item) => {
         let text = item.textContent.toLowerCase();
         if (query.length === 0 || text.includes(query)) {
-            item.style.display = 'block'
             hasVisibleItems = true;
+            item.classList.remove('table-item_hide')
         } else {
-            item.style.display = 'none'
+            item.classList.add('table-item_hide')
         }
     })
     if (query.length > 0 && !hasVisibleItems) {
-        noResult.style.display = 'block'
+        noResult.classList.remove('nothing_hide')
     } else (
-        noResult.style.display = 'none'
+        noResult.classList.add('nothing_hide')
     )
 }
 
-
-console.log(itemsArray[0].id)

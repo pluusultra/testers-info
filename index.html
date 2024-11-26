@@ -10,19 +10,27 @@
     <title>Document</title>
 </head>
 <body>
-<input type="text" class="test" >
-<p class="text">ID: 1, Model: 2355, Name: Ларец Рандомный ларец</p>
-<p class="text">ID: 2, Model: 2142, Name: Предмет Наркотики</p>
-<p class="text">ID: 3, Model: 2143, Name: Предмет Подарок</p>
-<p class="text">ID: 4, Model: 2139, Name: Предмет Аптечка</p>
-<p class="text">ID: 5, Model: 2144, Name: Предмет Набор с инструментами</p>
-<p class="text">ID: 6, Model: 9555, Name: Предмет Отмычка</p>
-<p class="text">ID: 7, Model: 2140, Name: Предмет Маска</p>
-<p class="text">ID: 8, Model: 5587, Name: Предмет Бронзовая рулетка</p>
-<p class="text">ID: 9, Model: 5588, Name: Предмет Серебряная рулетка</p>
-<p class="text">ID: 10, Model: 5590, Name: Предмет Золотая рулетка</p>
-<p class="nothing">Ничего не найдено</p>
-
-
+<input type="text" class="test">
+<table class="table-items">
+    <thead class="thead">
+    <tr class='thead__tr'>
+        <th>Item ID</th>
+        <th>Model ID</th>
+        <th>Item Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template id="template">
+        <tr class="table-item">
+            <td class="item-id"></td>
+            <td class="model-id"></td>
+            <td class="item-name"></td>
+        </tr>
+    </template>
+    <tr>
+        <td class="nothing nothing_hide" colspan="3">Ничего не найдено</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
