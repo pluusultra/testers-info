@@ -36,12 +36,23 @@ table {
 
 .thead tr, .thead th {
     border-top: none;
+    /*Убираем бордер сверху у шапки таблицы*/
 }
 
 tr, td, th {
     border: 2px solid black;
 }
 
+
+
+.copied {
+    background-color: green;
+    transition: all 0.5s ease;
+}
+
+tbody tr {
+    cursor: pointer;
+}
 
 th, td {
     padding: 20px;
