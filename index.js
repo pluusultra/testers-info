@@ -1,9 +1,26 @@
 import {itemsArray} from './items.js'
 
-const inputSearch = document.querySelector('.test')
+const inputSearch = document.querySelector('.input')
 const noResult = document.querySelector('.nothing')
 const template = document.querySelector('#template')
 const itemsList = document.querySelector('tbody')
+const buttonScrollUp = document.querySelector('.up-button')
+
+buttonScrollUp.addEventListener('click', e => {
+       window.scroll({
+           top: 0,
+           behavior: 'smooth',
+       })
+})
+
+window.addEventListener('scroll', () => {
+    if (scrollY >= 1500) {
+        buttonScrollUp.classList.add('up-button_visible');
+    } else {
+        buttonScrollUp.classList.remove('up-button_visible');
+    }
+})
+
 
 // Добавляем на сайт массив с информацией о каждом предмете
 itemsArray.forEach((el) => {
@@ -12,8 +29,8 @@ itemsArray.forEach((el) => {
     itemContainer.addEventListener('click', (e) => {
         let originalText = e.target.textContent;
         if (originalText !== 'Скопировано') {
-            navigator.clipboard.writeText(e.target.textContent);
             e.target.classList.add('copied')
+            navigator.clipboard.writeText(e.target.textContent);
             e.target.textContent = 'Скопировано';
             setTimeout(() => {
                 e.target.textContent = originalText;
