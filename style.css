@@ -112,6 +112,7 @@ tr, td, th {
     background-color: #86c232;
     font-size: 14px;
     color: #474b4f;
+    transition: all 0.3s ease;
 }
 
 tbody tr {
@@ -125,6 +126,7 @@ th, td {
 
 td {
     overflow-x: hidden;
+    transition: all 0.3s ease;
 }
 
 @media (hover: hover) {
